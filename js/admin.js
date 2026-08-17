@@ -49,7 +49,7 @@ let appData = {
         ABOUT_IMAGES: OFFICIAL_SLIDES
     },
     activities: [
-        { id: 1, tenHoatDong: 'Phát cháo từ thiện', moTaNgan: 'Nấu và phân phát hàng trăm suất cháo dinh dưỡng nóng hổi cho bệnh nhân và người có hoàn cảnh khó khăn.', hinhAnh: 'images/banner1.jpg', status: 'Còn hoạt động' },
+        { id: 1, tenHoatDong: 'Dòng chảy bếp hồng', moTaNgan: 'Nấu và phân phát hàng trăm suất cháo dinh dưỡng nóng hổi cho bệnh nhân và người có hoàn cảnh khó khăn.', hinhAnh: 'images/banner1.jpg', status: 'Còn hoạt động' },
         { id: 2, tenHoatDong: 'Hiến máu tình nguyện', moTaNgan: 'Giọt máu cho đi - Một đời ở lại. Ngày hội hiến máu trao niềm hy vọng cho các bệnh nhân cần máu điều trị.', hinhAnh: 'images/banner2.jpg', status: 'Còn hoạt động' },
         { id: 3, tenHoatDong: 'Trung thu cho em', moTaNgan: 'Mang đến không khí Tết Trung thu rộn ràng, lồng đèn lung linh và những phần quà ý nghĩa cho các em nhỏ.', hinhAnh: 'images/banner3.jpg', status: 'Còn hoạt động' },
         { id: 4, tenHoatDong: 'Kỷ niệm 5 năm thành lập', moTaNgan: 'Lễ kỷ niệm chặng đường 5 năm cống hiến vì cộng đồng của CLB Tình Nguyện Hoa Sen - Cơm An.', hinhAnh: 'images/banner4.jpg', status: 'Còn hoạt động' },

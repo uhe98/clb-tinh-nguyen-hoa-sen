@@ -559,6 +559,14 @@ async function loadActivities() {
             let list = fullData.activities || [];
             
             let needsSave = false;
+            if (list.some(a => a.tenHoatDong && a.tenHoatDong.includes('Phát cháo từ thiện'))) {
+                list.forEach(a => {
+                    if (a.tenHoatDong.includes('Phát cháo từ thiện')) {
+                        a.tenHoatDong = 'Dòng chảy bếp hồng';
+                    }
+                });
+                needsSave = true;
+            }
             if (list.some(a => a.tenHoatDong && a.tenHoatDong.includes('Hội thảo khoa học'))) {
                 list = list.filter(a => !a.tenHoatDong.includes('Hội thảo khoa học'));
                 needsSave = true;

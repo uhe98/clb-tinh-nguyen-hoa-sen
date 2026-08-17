@@ -555,7 +555,23 @@ async function loadActivities() {
     const saved = localStorage.getItem('CLB_HOA_SEN_APP_DATA');
     if (saved) {
         try {
-            const list = JSON.parse(saved).activities;
+            let fullData = JSON.parse(saved);
+            let list = fullData.activities || [];
+            
+            let needsSave = false;
+            if (list.some(a => a.tenHoatDong && a.tenHoatDong.includes('Hội thảo khoa học'))) {
+                list = list.filter(a => !a.tenHoatDong.includes('Hội thảo khoa học'));
+                needsSave = true;
+            }
+            if (!list.some(a => a.tenHoatDong === 'Xuân ấm tình thương')) {
+                list.push({ id: 5, tenHoatDong: 'Xuân ấm tình thương', moTaNgan: 'Trao tặng những phần quà Tết ý nghĩa, áo ấm và nhu yếu phẩm đến các hộ gia đình và trẻ em có hoàn cảnh khó khăn.', hinhAnh: 'images/xuanam.jpg', status: 'Còn hoạt động' });
+                needsSave = true;
+            }
+            if (needsSave) {
+                fullData.activities = list;
+                localStorage.setItem('CLB_HOA_SEN_APP_DATA', JSON.stringify(fullData));
+            }
+
             if (list) {
                 grid.innerHTML = list.filter(a => a.status !== 'Ẩn').map(act => `
                     <div class="activity-card">

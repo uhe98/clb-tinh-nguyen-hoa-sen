@@ -53,7 +53,7 @@ let appData = {
         { id: 2, tenHoatDong: 'Hiến máu tình nguyện', moTaNgan: 'Giọt máu cho đi - Một đời ở lại. Ngày hội hiến máu trao niềm hy vọng cho các bệnh nhân cần máu điều trị.', hinhAnh: 'images/banner2.jpg', status: 'Còn hoạt động' },
         { id: 3, tenHoatDong: 'Trung thu cho em', moTaNgan: 'Mang đến không khí Tết Trung thu rộn ràng, lồng đèn lung linh và những phần quà ý nghĩa cho các em nhỏ.', hinhAnh: 'images/banner3.jpg', status: 'Còn hoạt động' },
         { id: 4, tenHoatDong: 'Kỷ niệm 5 năm thành lập', moTaNgan: 'Lễ kỷ niệm chặng đường 5 năm cống hiến vì cộng đồng của CLB Tình Nguyện Hoa Sen - Cơm An.', hinhAnh: 'images/banner4.jpg', status: 'Còn hoạt động' },
-        { id: 5, tenHoatDong: 'Hội thảo khoa học INCOTEH 2026', moTaNgan: 'Đội ngũ tình nguyện viên Hoa Sen hỗ trợ và phục vụ thành công Hội thảo Quốc tế Công nghệ và Sức khỏe số.', hinhAnh: 'images/banner5.jpg', status: 'Còn hoạt động' }
+        { id: 5, tenHoatDong: 'Xuân ấm tình thương', moTaNgan: 'Trao tặng những phần quà Tết ý nghĩa, áo ấm và nhu yếu phẩm đến các hộ gia đình và trẻ em có hoàn cảnh khó khăn.', hinhAnh: 'images/xuanam.jpg', status: 'Còn hoạt động' }
     ],
     members: INITIAL_MEMBERS,
     registrations: [

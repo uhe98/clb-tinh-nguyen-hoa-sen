@@ -131,6 +131,8 @@ section { margin: 0 !important; padding: 48px 0; border: none; }
 
 .logo:hover .logo-img, .logo:hover .logo-fallback-svg { transform: scale(1.08) rotate(5deg); }
 
+.mobile-login-item { display: none !important; }
+
 /* Pure White Menu Container - 1 Single Horizontal Line */
 .nav-menu {
     display: flex;
@@ -463,20 +465,242 @@ section { margin: 0 !important; padding: 48px 0; border: none; }
     transform: scale(0.94) !important;
 }
 
-/* MEMBERS SLIDER */
-.slider-wrapper-outer { 
-    overflow-x: auto; 
-    -webkit-overflow-scrolling: touch;
-    scroll-snap-type: x mandatory;
-    padding: 10px 0 16px 0; 
+/* HIERARCHICAL ORG CHART (SƠ ĐỒ PHÂN CẤP CLB) */
+.org-tree-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 1100px;
+    margin: 0 auto;
+    position: relative;
 }
-.members-slider { display: flex; gap: 18px; transition: transform 0.6s ease-in-out; }
-.member-card-slide { min-width: 260px; width: 260px; background: #ffffff; padding: 24px 18px; border-radius: var(--radius-md); border: 1px solid #e2e8f0; text-align: center; box-shadow: var(--shadow-sm); scroll-snap-align: center; }
-.member-avatar { width: 90px; height: 90px; border-radius: 50%; margin: 0 auto 14px auto; overflow: hidden; border: 3px solid var(--accent-pink-soft); }
-.member-avatar img { width: 100%; height: 100%; object-fit: cover; }
-.member-name { font-size: 1.05rem; font-weight: 700; color: var(--primary-dark); margin-bottom: 4px; }
-.member-role { font-size: 0.82rem; font-weight: 600; color: var(--accent-pink); margin-bottom: 10px; }
-.member-quote { font-size: 0.82rem; font-style: italic; color: var(--text-muted); line-height: 1.4; }
+
+.org-level {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+/* Level 1 - Chủ nhiệm Card VIP */
+.card-president {
+    background: linear-gradient(135deg, #ffffff 0%, #fefce8 100%);
+    border: 2px solid #f59e0b !important;
+    box-shadow: 0 12px 32px rgba(245, 158, 11, 0.2) !important;
+    max-width: 380px;
+    width: 100%;
+}
+
+.card-president .org-badge {
+    background: linear-gradient(135deg, #f59e0b 0%, #b45309 100%);
+    color: #ffffff;
+}
+
+/* Level 2 - Phó chủ nhiệm Cards */
+.org-row {
+    display: flex;
+    gap: 32px;
+    justify-content: center;
+    width: 100%;
+    flex-wrap: wrap;
+}
+
+.card-vpres {
+    background: #ffffff;
+    border: 1.5px solid #e05297 !important;
+    box-shadow: 0 8px 24px rgba(224, 82, 151, 0.12) !important;
+    max-width: 340px;
+    width: 100%;
+}
+
+.card-vpres .org-badge {
+    background: var(--accent-pink-soft);
+    color: var(--accent-pink);
+    border: 1px solid rgba(224, 82, 151, 0.2);
+}
+
+.org-card {
+    padding: 24px;
+    border-radius: var(--radius-md);
+    text-align: center;
+    position: relative;
+    transition: var(--transition);
+}
+
+.org-card:hover {
+    transform: translateY(-4px);
+}
+
+.org-badge {
+    display: inline-block;
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: 0.78rem;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    margin-bottom: 14px;
+}
+
+.org-avatar {
+    width: 86px;
+    height: 86px;
+    border-radius: 50%;
+    margin: 0 auto 12px auto;
+    overflow: hidden;
+    border: 3px solid var(--primary-light);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.org-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.org-name {
+    font-size: 1.15rem;
+    font-weight: 800;
+    color: var(--primary-dark);
+    margin-bottom: 4px;
+}
+
+.org-role {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--accent-pink);
+    margin-bottom: 8px;
+}
+
+.org-quote {
+    font-size: 0.82rem;
+    font-style: italic;
+    color: var(--text-muted);
+    line-height: 1.4;
+}
+
+/* Connector lines vertical */
+.org-connector-vertical {
+    width: 3px;
+    height: 36px;
+    background: linear-gradient(to bottom, var(--primary) 0%, var(--accent-pink) 100%);
+    margin: 8px 0;
+    border-radius: 2px;
+}
+
+/* Level 3 - Departments Grid */
+.org-departments-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+    width: 100%;
+}
+
+.dept-box {
+    background: #ffffff;
+    border-radius: var(--radius-md);
+    border: 1px solid #e2e8f0;
+    padding: 24px;
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition);
+}
+
+.dept-box:hover {
+    box-shadow: var(--shadow-md);
+    border-color: var(--primary-light);
+}
+
+.dept-header {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 18px;
+    padding-bottom: 14px;
+    border-bottom: 1.5px dashed #cbd5e1;
+}
+
+.dept-icon {
+    font-size: 1.6rem;
+    width: 48px;
+    height: 48px;
+    background: var(--bg-light);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    border: 1px solid #e2e8f0;
+}
+
+.dept-title {
+    font-size: 1.05rem;
+    font-weight: 800;
+    color: var(--primary-dark);
+}
+
+.dept-sub {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    font-weight: 500;
+}
+
+.dept-members-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.dept-member-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 14px;
+    background: #f8fafc;
+    border-radius: 12px;
+    border: 1px solid #f1f5f9;
+}
+
+.dept-member-item.leader {
+    background: #f0fdf4;
+    border-color: #bbf7d0;
+}
+
+.dept-member-item img {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--primary);
+}
+
+.dept-member-avatar-placeholder {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background: #e2e8f0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+    color: var(--text-muted);
+}
+
+.dept-member-name {
+    font-size: 0.92rem;
+    font-weight: 700;
+    color: var(--primary-dark);
+}
+
+.dept-member-tag {
+    font-size: 0.78rem;
+    font-weight: 700;
+    color: var(--accent-pink);
+}
+
+.dept-member-sub {
+    font-size: 0.78rem;
+    color: var(--text-muted);
+}
 
 /* CTA BANNER */
 .cta-banner { background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 100%); padding: 60px 0; color: #ffffff; text-align: center; }

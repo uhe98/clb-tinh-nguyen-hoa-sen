@@ -20,12 +20,12 @@ const OFFICIAL_SLIDES = [
 const INITIAL_MEMBERS = [
     { id: 1, hoTen: 'Đ/c Bùi Cẩm Trang', chucVu: 'Phó Bí thư Đoàn trường, Chủ nhiệm CLB', banNganh: 'Ban Chủ Nhiệm', cauNoi: 'Lãnh đạo bằng tình yêu thương và trách nhiệm vì cộng đồng.', hinhAnh: 'images/pres.jpg' },
     { id: 2, hoTen: 'Đ/c Mạc Thị Cẩm Ly', chucVu: 'Phó Chủ nhiệm CLB, Trưởng Ban Tổ Chức - Kế Hoạch', banNganh: 'Ban Chủ Nhiệm', cauNoi: 'Kế hoạch chu đáo là nền tảng cho mọi hành trình tình nguyện thành công.', hinhAnh: 'images/vpres.jpg' },
-    { id: 3, hoTen: 'Đ/c Bùi Thuận An', chucVu: 'Phó Chủ nhiệm CLB', banNganh: 'Ban Chủ Nhiệm', cauNoi: 'Đồng lòng cống hiến, lan tỏa sức trẻ tình nguyện.', hinhAnh: 'images/pres.jpg' },
-    { id: 4, hoTen: 'Đ/c Trần Kim Khánh', chucVu: 'Phó Chủ nhiệm CLB', banNganh: 'Ban Chủ Nhiệm', cauNoi: 'Sẵn sàng nhận nhiệm vụ, sẵn sàng cống hiến hết mình.', hinhAnh: 'images/charity.jpg' },
+    { id: 3, hoTen: 'Đ/c Nguyễn Văn Thuận', chucVu: 'Phó Chủ nhiệm CLB', banNganh: 'Ban Chủ Nhiệm', cauNoi: 'Đồng lòng cống hiến, lan tỏa sức trẻ tình nguyện.', hinhAnh: 'images/pres.jpg' },
+    { id: 4, hoTen: 'Đ/c Trần Kim Khánh', chucVu: 'Trưởng Ban Nhiệm Vụ', banNganh: 'Ban Chủ Nhiệm', cauNoi: 'Sẵn sàng nhận nhiệm vụ, sẵn sàng cống hiến hết mình.', hinhAnh: 'images/charity.jpg' },
     { id: 5, hoTen: 'Đ/c Lê Thanh Minh', chucVu: 'Trưởng Ban Phong Trào - Truyền Thông', banNganh: 'Ban Truyền Thông', cauNoi: 'Lan tỏa câu chuyện tử tế đến với hàng triệu trái tim.', hinhAnh: 'images/workshop.jpg' },
     { id: 6, hoTen: 'Đ/c Nguyễn Đức Anh', chucVu: 'Trưởng Ban Thể Thao', banNganh: 'Ban Thể Thao', cauNoi: 'Rèn luyện thể lực, thắt chặt tinh thần đồng đội nhiệt huyết.', hinhAnh: 'images/student.jpg' },
     { id: 7, hoTen: 'Đ/c Trần Thị Nguyên', chucVu: 'Trưởng Ban Thủ Quỹ - Bán Hàng', banNganh: 'Ban Thủ Quỹ - Bán Hàng', cauNoi: 'Gây quỹ yêu thương từ những sản phẩm nhỏ bé đầy ý nghĩa.', hinhAnh: 'images/env.jpg' },
-    { id: 8, hoTen: 'Đ/c Chu Thị Phúc', chucVu: 'Phụ trách Tài Chính - Ban Thủ Quỹ - Bán Hàng', banNganh: 'Ban Thủ Quỹ - Bán Hàng', cauNoi: 'Minh bạch, cẩn trọng trong từng nguồn quỹ từ thiện.', hinhAnh: 'images/vpres.jpg' }
+    { id: 8, hoTen: 'Đ/c Chu Thị Phúc', chucVu: 'Thủ Quỹ - Ban Thủ Quỹ - Bán Hàng', banNganh: 'Ban Thủ Quỹ - Bán Hàng', cauNoi: 'Minh bạch, cẩn trọng trong từng nguồn quỹ từ thiện.', hinhAnh: 'images/vpres.jpg' }
 ];
 
 let appData = {

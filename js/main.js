@@ -604,7 +604,36 @@ async function loadMembers() {
     const saved = localStorage.getItem('CLB_HOA_SEN_APP_DATA');
     if (saved) {
         try {
-            const list = JSON.parse(saved).members;
+            let fullData = JSON.parse(saved);
+            let list = fullData.members || [];
+            
+            let needsSave = false;
+            list.forEach(m => {
+                if (m.id === 3 || m.hoTen === 'Đ/c Bùi Thuận An') {
+                    if (m.hoTen !== 'Đ/c Nguyễn Văn Thuận') {
+                        m.hoTen = 'Đ/c Nguyễn Văn Thuận';
+                        needsSave = true;
+                    }
+                }
+                if (m.id === 4 || m.hoTen.includes('Trần Kim Khánh')) {
+                    if (m.chucVu !== 'Trưởng Ban Nhiệm Vụ') {
+                        m.chucVu = 'Trưởng Ban Nhiệm Vụ';
+                        needsSave = true;
+                    }
+                }
+                if (m.id === 8 || m.hoTen.includes('Chu Thị Phúc')) {
+                    if (m.chucVu !== 'Thủ Quỹ - Ban Thủ Quỹ - Bán Hàng') {
+                        m.chucVu = 'Thủ Quỹ - Ban Thủ Quỹ - Bán Hàng';
+                        needsSave = true;
+                    }
+                }
+            });
+
+            if (needsSave) {
+                fullData.members = list;
+                localStorage.setItem('CLB_HOA_SEN_APP_DATA', JSON.stringify(fullData));
+            }
+
             if (list) {
                 slider.innerHTML = list.map(m => `
                     <div class="member-card-slide">

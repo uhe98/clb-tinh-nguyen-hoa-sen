@@ -203,30 +203,37 @@ function handleSingleFileUpload(event, targetInputId) {
 }
 
 function handleBannerFileUpload(event) {
-    const file = event.target.files[0];
-    if (!file) return;
+    const files = Array.from(event.target.files || []);
+    if (files.length === 0) return;
 
-    if (!file.type.startsWith('image/')) {
-        showToast('⚠️ Vui lòng chọn file hình ảnh (JPG, PNG, GIF)!', 'warning');
+    const validFiles = files.filter(f => f.type.startsWith('image/'));
+    if (validFiles.length === 0) {
+        showToast('⚠️ Vui lòng chọn các file hình ảnh hợp lệ (JPG, PNG, GIF, WEBP)!', 'warning');
         return;
     }
 
-    showToast('⏳ Đang tải ảnh từ máy tính vào Slide Banner...', 'info');
+    showToast(`⏳ Đang tải và lưu ${validFiles.length} ảnh từ máy tính vào Slide Banner...`, 'info');
 
-    const reader = new FileReader();
-    reader.onload = function(e) {
-        const resultUrl = e.target.result;
-        if (!appData.content.HERO_SLIDES) appData.content.HERO_SLIDES = [];
-        if (appData.content.HERO_SLIDES.length >= 20) {
-            showToast('⚠️ Banner đã đạt giới hạn tối đa 20 slide ảnh!', 'warning');
-            return;
+    const readPromises = validFiles.map(file => {
+        return new Promise((resolve) => {
+            const reader = new FileReader();
+            reader.onload = (e) => resolve(e.target.result);
+            reader.onerror = () => resolve(null);
+            reader.readAsDataURL(file);
+        });
+    });
+
+    Promise.all(readPromises).then(results => {
+        const successfulImages = results.filter(res => res !== null);
+        if (successfulImages.length > 0) {
+            if (!appData.content.HERO_SLIDES) appData.content.HERO_SLIDES = [];
+            appData.content.HERO_SLIDES.unshift(...successfulImages);
+            saveLocalStore();
+            renderBannerSlidesList();
+            showToast(`🎉 Đã tải lên và LƯU THÀNH CÔNG ${successfulImages.length} ảnh mới vào Banner!`, 'success');
         }
-        appData.content.HERO_SLIDES.unshift(resultUrl);
-        saveLocalStore();
-        renderBannerSlidesList();
-        showToast('🎉 Đã thêm ảnh mới từ máy tính vào đầu Slide Banner!', 'success');
-    };
-    reader.readAsDataURL(file);
+    });
+
     event.target.value = '';
 }
 
@@ -441,29 +448,37 @@ function handleAboutSingleFileUpload(event, index) {
 }
 
 function handleAboutAlbumFileUpload(event) {
-    const file = event.target.files[0];
-    if (!file) return;
+    const files = Array.from(event.target.files || []);
+    if (files.length === 0) return;
 
-    if (!file.type.startsWith('image/')) {
-        showToast('⚠️ Vui lòng chọn file hình ảnh (JPG, PNG, GIF)!', 'warning');
+    const validFiles = files.filter(f => f.type.startsWith('image/'));
+    if (validFiles.length === 0) {
+        showToast('⚠️ Vui lòng chọn các file hình ảnh hợp lệ (JPG, PNG, GIF, WEBP)!', 'warning');
         return;
     }
 
-    showToast('⏳ Đang thêm ảnh mới từ máy tính vào Album Về Chúng Tôi...', 'info');
-    const reader = new FileReader();
-    reader.onload = function(e) {
-        const resultUrl = e.target.result;
-        if (!appData.content.ABOUT_IMAGES) appData.content.ABOUT_IMAGES = [];
-        if (appData.content.ABOUT_IMAGES.length >= 30) {
-            showToast('⚠️ Album đã đạt giới hạn tối đa 30 hình ảnh!', 'warning');
-            return;
+    showToast(`⏳ Đang tải và lưu ${validFiles.length} ảnh vào Album Về Chúng Tôi...`, 'info');
+
+    const readPromises = validFiles.map(file => {
+        return new Promise((resolve) => {
+            const reader = new FileReader();
+            reader.onload = (e) => resolve(e.target.result);
+            reader.onerror = () => resolve(null);
+            reader.readAsDataURL(file);
+        });
+    });
+
+    Promise.all(readPromises).then(results => {
+        const successfulImages = results.filter(res => res !== null);
+        if (successfulImages.length > 0) {
+            if (!appData.content.ABOUT_IMAGES) appData.content.ABOUT_IMAGES = [];
+            appData.content.ABOUT_IMAGES.unshift(...successfulImages);
+            saveLocalStore();
+            renderAboutImagesList();
+            showToast(`🌿 Đã tải lên và LƯU THÀNH CÔNG ${successfulImages.length} ảnh mới vào Về Chúng Tôi!`, 'success');
         }
-        appData.content.ABOUT_IMAGES.unshift(resultUrl);
-        saveLocalStore();
-        renderAboutImagesList();
-        showToast('🎉 Đã tải & thêm ảnh mới vào Album Về Chúng Tôi thành công!', 'success');
-    };
-    reader.readAsDataURL(file);
+    });
+
     event.target.value = '';
 }
 

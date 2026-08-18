@@ -859,7 +859,7 @@ section { margin: 0 !important; padding: 48px 0; border: none; }
 @media (max-width: 860px) {
     .footer-grid { grid-template-columns: 1fr; gap: 24px; }
 }
-.footer-logo { display: flex; align-items: center; gap: 10px; font-family: 'Outfit', sans-serif; font-size: 1.2rem; font-weight: 800; color: #ffffff; margin-bottom: 10px; }
+.footer-logo { display: flex; align-items: center; gap: 10px; font-family: 'Be Vietnam Pro', sans-serif !important; font-size: 1.15rem; font-weight: 800; color: #ffffff; margin-bottom: 10px; letter-spacing: -0.2px; }
 .footer-logo-img { width: 36px; height: 36px; object-fit: contain; border-radius: 50%; background: #ffffff; padding: 2px; }
 .footer-address-box { display: flex; align-items: flex-start; gap: 8px; margin-top: 10px; color: #f78bb0; font-size: 0.88rem; font-weight: 600; text-wrap: pretty; }
 .footer-heading { font-size: 1rem; font-weight: 700; color: #ffffff; margin-bottom: 14px; }
@@ -969,10 +969,70 @@ section { margin: 0 !important; padding: 48px 0; border: none; }
 .status-badge.hidden { background: #fee2e2; color: #991b1b; }
 .status-badge.status-sale { background: #fef3c7; color: #92400e; }
 
-.btn-action-edit { background: #ffffff; border: 1.5px solid #cbd5e1; border-radius: 20px; padding: 6px 16px; font-weight: 700; font-size: 0.82rem; cursor: pointer; margin-right: 6px; }
-.btn-action-hide { background: #991b1b; color: #ffffff; border: none; border-radius: 20px; padding: 6px 16px; font-weight: 700; font-size: 0.82rem; cursor: pointer; }
-.btn-action-delete { background: #ef4444; color: #ffffff; border: none; border-radius: 20px; padding: 6px 16px; font-weight: 700; font-size: 0.82rem; cursor: pointer; }
-.btn-action-add { background: #230b17; color: #ffffff; border-radius: 24px; padding: 10px 22px; font-weight: 700; border: none; cursor: pointer; }
+/* ADMIN BUTTONS SMOOTHNESS & MODERN GLASSMORPHIC MICRO-ANIMATIONS */
+.btn-action-add, .btn-action-edit, .btn-action-delete, .btn-action-hide, .admin-nav-item {
+    transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.btn-action-add {
+    background: linear-gradient(135deg, #075936 0%, #0d7a4b 100%) !important;
+    color: #ffffff !important;
+    border-radius: 20px !important;
+    padding: 9px 20px !important;
+    font-weight: 800 !important;
+    font-size: 0.86rem !important;
+    border: none !important;
+    cursor: pointer !important;
+    box-shadow: 0 4px 14px rgba(7, 89, 54, 0.22) !important;
+}
+.btn-action-add:hover {
+    transform: translateY(-2px) scale(1.02) !important;
+    box-shadow: 0 6px 20px rgba(7, 89, 54, 0.38) !important;
+    filter: brightness(1.08) !important;
+}
+.btn-action-add:active {
+    transform: translateY(0) scale(0.97) !important;
+}
+
+.btn-action-edit {
+    background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%) !important;
+    color: #075936 !important;
+    border: 1.5px solid #86efac !important;
+    border-radius: 18px !important;
+    padding: 7px 16px !important;
+    font-weight: 700 !important;
+    font-size: 0.82rem !important;
+    cursor: pointer !important;
+    box-shadow: 0 2px 8px rgba(7, 89, 54, 0.08) !important;
+}
+.btn-action-edit:hover {
+    transform: translateY(-2px) !important;
+    background: #dcfce7 !important;
+    box-shadow: 0 4px 14px rgba(7, 89, 54, 0.2) !important;
+}
+.btn-action-edit:active {
+    transform: translateY(0) scale(0.97) !important;
+}
+
+.btn-action-delete {
+    background: linear-gradient(135deg, #fef2f2 0%, #fee2e2 100%) !important;
+    color: #dc2626 !important;
+    border: 1.5px solid #fca5a5 !important;
+    border-radius: 18px !important;
+    padding: 7px 16px !important;
+    font-weight: 700 !important;
+    font-size: 0.82rem !important;
+    cursor: pointer !important;
+    box-shadow: 0 2px 8px rgba(220, 38, 38, 0.08) !important;
+}
+.btn-action-delete:hover {
+    transform: translateY(-2px) !important;
+    background: #fee2e2 !important;
+    box-shadow: 0 4px 14px rgba(220, 38, 38, 0.22) !important;
+}
+.btn-action-delete:active {
+    transform: translateY(0) scale(0.97) !important;
+}
 
 /* TOAST */
 .toast-container { position: fixed; bottom: 24px; right: 24px; z-index: 3000; display: flex; flex-direction: column; gap: 10px; }

@@ -20,6 +20,8 @@
     --radius-md: 16px;
     --radius-lg: 24px;
     --radius-full: 9999px;
+    --font-main: 'Be Vietnam Pro', 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    --font-heading: 'Be Vietnam Pro', 'Plus Jakarta Sans', sans-serif;
     --transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
@@ -32,7 +34,7 @@
 
 html {
     scroll-behavior: smooth;
-    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    font-family: var(--font-main);
     color: var(--text-dark);
     background-color: var(--bg-light);
 }
@@ -49,10 +51,10 @@ button, input, select, textarea { font-family: inherit; touch-action: manipulati
 
 /* NGĂN CÁCH CÁC DANH MỤC */
 section { margin: 0 !important; padding: 48px 0; border: none; }
-.section-header { text-align: center; max-width: 720px; margin: 0 auto 28px auto; }
+.section-header { text-align: center; max-width: 1180px; margin: 0 auto 28px auto; }
 .section-tag { display: inline-flex; align-items: center; gap: 8px; padding: 5px 16px; background: var(--accent-pink-soft); color: var(--accent-pink); border-radius: var(--radius-full); font-size: 0.82rem; font-weight: 700; letter-spacing: 0.5px; text-transform: uppercase; margin-bottom: 10px; border: 1px solid rgba(224, 82, 151, 0.2); }
 .section-title { font-size: 2.2rem; font-weight: 800; margin-bottom: 12px; color: var(--primary-dark); }
-.section-subtitle { font-size: 1.02rem; color: var(--text-muted); }
+.section-subtitle { font-size: clamp(0.98rem, 1.3vw, 1.18rem); font-weight: 500; color: var(--text-muted); white-space: nowrap; max-width: 100%; overflow: hidden; text-overflow: ellipsis; }
 
 /* PURE WHITE HEADER NAVBAR - STRICTLY 1 SINGLE HORIZONTAL LINE */
 .header {
@@ -91,12 +93,13 @@ section { margin: 0 !important; padding: 48px 0; border: none; }
     display: flex;
     align-items: center;
     gap: 8px;
-    font-family: 'Outfit', sans-serif;
+    font-family: 'Be Vietnam Pro', sans-serif !important;
     font-weight: 800;
     font-size: clamp(0.9rem, 1.1vw, 1.15rem);
     color: var(--primary-dark);
     white-space: nowrap;
     flex-shrink: 0;
+    letter-spacing: -0.2px;
 }
 
 .logo-wrapper {
@@ -465,12 +468,15 @@ section { margin: 0 !important; padding: 48px 0; border: none; }
     transform: scale(0.94) !important;
 }
 
-/* HIERARCHICAL ORG CHART (SƠ ĐỒ PHÂN CẤP CLB) */
+/* HIERARCHICAL ORG CHART (CÁCH LỀ 2CM MỖI BÊN CHUẨN XÁC) */
 .org-tree-container {
     display: flex;
     flex-direction: column;
     align-items: center;
-    max-width: 1100px;
+    width: 100%;
+    max-width: 100%;
+    padding-left: 2cm !important;
+    padding-right: 2cm !important;
     margin: 0 auto;
     position: relative;
 }
@@ -485,10 +491,11 @@ section { margin: 0 !important; padding: 48px 0; border: none; }
 /* Level 1 - Chủ nhiệm Card VIP */
 .card-president {
     background: linear-gradient(135deg, #ffffff 0%, #fefce8 100%);
-    border: 2px solid #f59e0b !important;
-    box-shadow: 0 12px 32px rgba(245, 158, 11, 0.2) !important;
-    max-width: 380px;
+    border: 1.5px solid #f59e0b !important;
+    box-shadow: 0 4px 14px rgba(245, 158, 11, 0.12) !important;
+    max-width: 230px !important;
     width: 100%;
+    padding: 10px 12px !important;
 }
 
 .card-president .org-badge {
@@ -499,7 +506,7 @@ section { margin: 0 !important; padding: 48px 0; border: none; }
 /* Level 2 - Phó chủ nhiệm Cards */
 .org-row {
     display: flex;
-    gap: 32px;
+    gap: 16px;
     justify-content: center;
     width: 100%;
     flex-wrap: wrap;
@@ -508,9 +515,10 @@ section { margin: 0 !important; padding: 48px 0; border: none; }
 .card-vpres {
     background: #ffffff;
     border: 1.5px solid #e05297 !important;
-    box-shadow: 0 8px 24px rgba(224, 82, 151, 0.12) !important;
-    max-width: 340px;
+    box-shadow: 0 4px 12px rgba(224, 82, 151, 0.08) !important;
+    max-width: 215px !important;
     width: 100%;
+    padding: 10px 10px !important;
 }
 
 .card-vpres .org-badge {
@@ -519,37 +527,82 @@ section { margin: 0 !important; padding: 48px 0; border: none; }
     border: 1px solid rgba(224, 82, 151, 0.2);
 }
 
+/* Level 3 - Department Cards */
+.card-dept {
+    background: #ffffff;
+    border: 1.5px solid #075936 !important;
+    box-shadow: 0 3px 10px rgba(7, 89, 54, 0.08) !important;
+    max-width: 165px !important;
+    width: 100%;
+    padding: 8px 6px !important;
+}
+
+.card-dept .org-badge {
+    background: #f0fdf4;
+    color: var(--primary);
+    border: 1px solid #bbf7d0;
+}
+
+/* Level 3 - 1 Single Horizontal Row (Dải Đều 100%) */
+.level-3 {
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.level-3 .org-row {
+    display: flex;
+    flex-wrap: nowrap !important;
+    gap: 12px;
+    justify-content: space-between !important;
+    align-items: stretch;
+    width: 100%;
+    max-width: 100%;
+    padding: 6px 0;
+}
+
+.level-3 .org-card {
+    flex: 1 1 0 !important;
+    min-width: 0 !important;
+    max-width: 190px !important;
+    padding: 10px 6px !important;
+}
+
 .org-card {
-    padding: 24px;
-    border-radius: var(--radius-md);
+    padding: 10px 8px;
+    border-radius: var(--radius-sm);
     text-align: center;
     position: relative;
     transition: var(--transition);
 }
 
 .org-card:hover {
-    transform: translateY(-4px);
+    transform: translateY(-2px);
 }
 
 .org-badge {
     display: inline-block;
-    padding: 4px 14px;
-    border-radius: 20px;
-    font-size: 0.78rem;
+    padding: 2px 6px;
+    border-radius: 12px;
+    font-size: 0.58rem;
     font-weight: 800;
-    letter-spacing: 0.5px;
-    text-transform: uppercase;
-    margin-bottom: 14px;
+    font-family: 'Be Vietnam Pro', sans-serif !important;
+    letter-spacing: -0.2px;
+    margin-bottom: 4px;
+    white-space: nowrap;
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .org-avatar {
-    width: 86px;
-    height: 86px;
+    width: 44px;
+    height: 44px;
     border-radius: 50%;
-    margin: 0 auto 12px auto;
+    margin: 0 auto 4px auto;
     overflow: hidden;
-    border: 3px solid var(--primary-light);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border: 1.5px solid var(--primary-light);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
 }
 
 .org-avatar img {
@@ -559,48 +612,61 @@ section { margin: 0 !important; padding: 48px 0; border: none; }
 }
 
 .org-name {
-    font-size: 1.15rem;
+    font-size: 0.90rem;
     font-weight: 800;
     color: var(--primary-dark);
-    margin-bottom: 4px;
+    margin-bottom: 2px;
+    white-space: normal !important;
+    word-break: normal;
+    line-height: 1.25;
 }
 
 .org-role {
-    font-size: 0.85rem;
+    font-size: 0.72rem;
     font-weight: 700;
     color: var(--accent-pink);
-    margin-bottom: 8px;
+    line-height: 1.3;
+    white-space: normal !important;
+    word-break: normal;
+}
+
+.org-sub-role {
+    display: block;
+    font-size: 0.66rem;
+    font-weight: 600;
+    color: var(--primary-dark);
+    margin-top: 1px;
 }
 
 .org-quote {
-    font-size: 0.82rem;
+    font-size: 0.74rem;
     font-style: italic;
     color: var(--text-muted);
-    line-height: 1.4;
+    line-height: 1.3;
 }
 
 /* Connector lines vertical */
 .org-connector-vertical {
-    width: 3px;
-    height: 36px;
+    width: 2px;
+    height: 20px;
     background: linear-gradient(to bottom, var(--primary) 0%, var(--accent-pink) 100%);
-    margin: 8px 0;
+    margin: 4px 0;
     border-radius: 2px;
 }
 
-/* Level 3 - Departments Grid */
+/* Level 3 - Departments Grid (Compact) */
 .org-departments-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 24px;
+    gap: 14px;
     width: 100%;
 }
 
 .dept-box {
     background: #ffffff;
-    border-radius: var(--radius-md);
+    border-radius: var(--radius-sm);
     border: 1px solid #e2e8f0;
-    padding: 24px;
+    padding: 14px 16px;
     box-shadow: var(--shadow-sm);
     transition: var(--transition);
 }
@@ -613,16 +679,16 @@ section { margin: 0 !important; padding: 48px 0; border: none; }
 .dept-header {
     display: flex;
     align-items: center;
-    gap: 14px;
-    margin-bottom: 18px;
-    padding-bottom: 14px;
-    border-bottom: 1.5px dashed #cbd5e1;
+    gap: 10px;
+    margin-bottom: 10px;
+    padding-bottom: 8px;
+    border-bottom: 1px dashed #cbd5e1;
 }
 
 .dept-icon {
-    font-size: 1.6rem;
-    width: 48px;
-    height: 48px;
+    font-size: 1.2rem;
+    width: 36px;
+    height: 36px;
     background: var(--bg-light);
     border-radius: 50%;
     display: flex;
@@ -633,13 +699,13 @@ section { margin: 0 !important; padding: 48px 0; border: none; }
 }
 
 .dept-title {
-    font-size: 1.05rem;
+    font-size: 0.92rem;
     font-weight: 800;
     color: var(--primary-dark);
 }
 
 .dept-sub {
-    font-size: 0.8rem;
+    font-size: 0.74rem;
     color: var(--text-muted);
     font-weight: 500;
 }
@@ -647,16 +713,16 @@ section { margin: 0 !important; padding: 48px 0; border: none; }
 .dept-members-list {
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 8px;
 }
 
 .dept-member-item {
     display: flex;
     align-items: center;
-    gap: 12px;
-    padding: 10px 14px;
+    gap: 8px;
+    padding: 6px 10px;
     background: #f8fafc;
-    border-radius: 12px;
+    border-radius: 8px;
     border: 1px solid #f1f5f9;
 }
 
@@ -666,40 +732,59 @@ section { margin: 0 !important; padding: 48px 0; border: none; }
 }
 
 .dept-member-item img {
-    width: 42px;
-    height: 42px;
+    width: 32px;
+    height: 32px;
     border-radius: 50%;
     object-fit: cover;
-    border: 2px solid var(--primary);
+    border: 1.5px solid var(--primary);
 }
 
 .dept-member-avatar-placeholder {
-    width: 42px;
-    height: 42px;
+    width: 32px;
+    height: 32px;
     border-radius: 50%;
     background: #e2e8f0;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1.1rem;
+    font-size: 0.9rem;
     color: var(--text-muted);
 }
 
 .dept-member-name {
-    font-size: 0.92rem;
+    font-size: 0.84rem;
     font-weight: 700;
     color: var(--primary-dark);
 }
 
 .dept-member-tag {
-    font-size: 0.78rem;
+    font-size: 0.72rem;
     font-weight: 700;
     color: var(--accent-pink);
 }
 
 .dept-member-sub {
-    font-size: 0.78rem;
+    font-size: 0.72rem;
     color: var(--text-muted);
+}
+
+.dept-box-wide {
+    grid-column: span 2;
+}
+
+.dept-members-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 8px;
+}
+
+@media (max-width: 768px) {
+    .dept-box-wide {
+        grid-column: span 1;
+    }
+    .dept-members-grid {
+        grid-template-columns: 1fr;
+    }
 }
 
 /* CTA BANNER */
@@ -770,7 +855,10 @@ section { margin: 0 !important; padding: 48px 0; border: none; }
 
 /* FOOTER */
 .footer { background: #022415; color: rgba(255, 255, 255, 0.78); padding: 36px 0 18px 0; }
-.footer-grid { display: grid; grid-template-columns: 2fr 1fr; gap: 48px; margin-bottom: 24px; }
+.footer-grid { display: grid; grid-template-columns: 1.3fr 1.5fr 0.8fr; gap: 32px; margin-bottom: 24px; }
+@media (max-width: 860px) {
+    .footer-grid { grid-template-columns: 1fr; gap: 24px; }
+}
 .footer-logo { display: flex; align-items: center; gap: 10px; font-family: 'Outfit', sans-serif; font-size: 1.2rem; font-weight: 800; color: #ffffff; margin-bottom: 10px; }
 .footer-logo-img { width: 36px; height: 36px; object-fit: contain; border-radius: 50%; background: #ffffff; padding: 2px; }
 .footer-address-box { display: flex; align-items: flex-start; gap: 8px; margin-top: 10px; color: #f78bb0; font-size: 0.88rem; font-weight: 600; text-wrap: pretty; }

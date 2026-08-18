@@ -431,7 +431,6 @@ function initRegisterForm() {
         const email = document.getElementById('regEmail').value.trim();
         const deptEl = document.getElementById('regDepartment');
         const dept = deptEl ? deptEl.value : 'Tình nguyện viên chung';
-        const studentId = document.getElementById('regStudentId').value.trim();
         const uni = document.getElementById('regUniversity').value.trim();
         const mot = document.getElementById('regMotivation').value.trim();
 
@@ -457,7 +456,6 @@ function initRegisterForm() {
         const newReg = {
             id: Date.now(),
             hoTen: name,
-            maSinhVien: studentId,
             soDienThoai: phone,
             email: email,
             banDangKy: dept,

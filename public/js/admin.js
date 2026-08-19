@@ -20,18 +20,17 @@ const OFFICIAL_SLIDES = [
 const INITIAL_MEMBERS = [
     { id: 1, hoTen: 'Đ/c Bùi Cẩm Trang', chucVu: 'Phó Bí thư Đoàn trường, Chủ nhiệm CLB', banNganh: 'Ban Chủ Nhiệm', cauNoi: 'Lãnh đạo bằng tình yêu thương và trách nhiệm vì cộng đồng.', hinhAnh: 'images/pres.jpg' },
     { id: 2, hoTen: 'Đ/c Mạc Thị Cẩm Ly', chucVu: 'Phó Chủ nhiệm CLB, Trưởng Ban Tổ Chức - Kế Hoạch', banNganh: 'Ban Chủ Nhiệm', cauNoi: 'Kế hoạch chu đáo là nền tảng cho mọi hành trình tình nguyện thành công.', hinhAnh: 'images/vpres.jpg' },
-    { id: 3, hoTen: 'Đ/c Bùi Thuận An', chucVu: 'Phó Chủ nhiệm CLB', banNganh: 'Ban Chủ Nhiệm', cauNoi: 'Đồng lòng cống hiến, lan tỏa sức trẻ tình nguyện.', hinhAnh: 'images/pres.jpg' },
-    { id: 4, hoTen: 'Đ/c Trần Kim Khánh', chucVu: 'Phó Chủ nhiệm CLB', banNganh: 'Ban Chủ Nhiệm', cauNoi: 'Sẵn sàng nhận nhiệm vụ, sẵn sàng cống hiến hết mình.', hinhAnh: 'images/charity.jpg' },
+    { id: 3, hoTen: 'Đ/c Nguyễn Văn Thuận', chucVu: 'Phó Chủ nhiệm CLB', banNganh: 'Ban Chủ Nhiệm', cauNoi: 'Đồng lòng cống hiến, lan tỏa sức trẻ tình nguyện.', hinhAnh: 'images/pres.jpg' },
+    { id: 4, hoTen: 'Đ/c Trần Kim Khánh', chucVu: 'Trưởng Ban Nhiệm Vụ', banNganh: 'Ban Chủ Nhiệm', cauNoi: 'Sẵn sàng nhận nhiệm vụ, sẵn sàng cống hiến hết mình.', hinhAnh: 'images/charity.jpg' },
     { id: 5, hoTen: 'Đ/c Lê Thanh Minh', chucVu: 'Trưởng Ban Phong Trào - Truyền Thông', banNganh: 'Ban Truyền Thông', cauNoi: 'Lan tỏa câu chuyện tử tế đến với hàng triệu trái tim.', hinhAnh: 'images/workshop.jpg' },
     { id: 6, hoTen: 'Đ/c Nguyễn Đức Anh', chucVu: 'Trưởng Ban Thể Thao', banNganh: 'Ban Thể Thao', cauNoi: 'Rèn luyện thể lực, thắt chặt tinh thần đồng đội nhiệt huyết.', hinhAnh: 'images/student.jpg' },
-    { id: 7, hoTen: 'Đ/c Trần Thị Nguyên', chucVu: 'Trưởng Ban Thủ Quỹ - Bán Hàng', banNganh: 'Ban Thủ Quỹ - Bán Hàng', cauNoi: 'Gây quỹ yêu thương từ những sản phẩm nhỏ bé đầy ý nghĩa.', hinhAnh: 'images/env.jpg' },
-    { id: 8, hoTen: 'Đ/c Chu Thị Phúc', chucVu: 'Phụ trách Tài Chính - Ban Thủ Quỹ - Bán Hàng', banNganh: 'Ban Thủ Quỹ - Bán Hàng', cauNoi: 'Minh bạch, cẩn trọng trong từng nguồn quỹ từ thiện.', hinhAnh: 'images/vpres.jpg' }
+    { id: 8, hoTen: 'Đ/c Chu Thị Phúc', chucVu: 'Thủ Quỹ - Ban Thủ Quỹ - Bán Hàng', banNganh: 'Ban Thủ Quỹ - Bán Hàng', cauNoi: 'Minh bạch, cẩn trọng trong từng nguồn quỹ từ thiện.', hinhAnh: 'images/vpres.jpg' }
 ];
 
 let appData = {
     content: {
         TEN_CLB: 'CLB TÌNH NGUYỆN HOA SEN - TDU',
-        HERO_TITLE: 'CLB TÌNH NGUYỆN HOA SEN – Lan tỏa yêu thương chung tay vì cộng đồng',
+        HERO_TITLE: 'CLB TÌNH NGUYỆN HOA SEN – Mọi thứ sẽ qua đi, chỉ còn tình người ở lại',
         HERO_SUBTITLE: 'Kết nối những trái tim nhiệt huyết, cùng mang nụ cười và hy vọng đến khắp mọi miền Tổ quốc.',
         STAT_MEMBERS: '50+',
         STAT_CAMPAIGNS: '20+',
@@ -40,7 +39,7 @@ let appData = {
         CONTACT_PHONE: '(+84) 123 456 789',
         CONTACT_ADDRESS: 'Số 3 Vũ Công Đán, phường Tứ Minh, TP. Hải Phòng',
         SOCIAL_FB: 'https://www.facebook.com/share/1JYARBM1M1/?mibextid=wwXIfr',
-        SOCIAL_ZALO: 'https://zalo.me/g/jnkxkg639',
+        SOCIAL_ZALO: 'https://zalo.me/g/bxsplwuxbc63rbsmizrt',
         LOGO_IMG: 'images/logo.png',
         HERO_SLIDES: OFFICIAL_SLIDES,
         ABOUT_TITLE: 'Hành trình nhiệt huyết của tuổi trẻ',
@@ -49,7 +48,8 @@ let appData = {
         ABOUT_IMAGES: OFFICIAL_SLIDES
     },
     activities: [
-        { id: 1, tenHoatDong: 'Phát cháo từ thiện', moTaNgan: 'Nấu và phân phát hàng trăm suất cháo dinh dưỡng nóng hổi cho bệnh nhân và người có hoàn cảnh khó khăn.', hinhAnh: 'images/banner1.jpg', status: 'Còn hoạt động' },
+        { id: 6, tenHoatDong: '🥕 Chung tay hỗ trợ tiêu thụ cà rốt Hải Phòng', moTaNgan: 'Chung tay cùng bà con nông dân kết nối, thu mua và hỗ trợ tiêu thụ nông sản cà rốt Hải Phòng.', hinhAnh: 'images/carrots_support.jpg', status: 'Còn hoạt động' },
+        { id: 1, tenHoatDong: 'Dòng chảy bếp hồng', moTaNgan: 'Nấu và phân phát hàng trăm suất cháo dinh dưỡng nóng hổi cho bệnh nhân và người có hoàn cảnh khó khăn.', hinhAnh: 'images/banner1.jpg', status: 'Còn hoạt động' },
         { id: 2, tenHoatDong: 'Hiến máu tình nguyện', moTaNgan: 'Giọt máu cho đi - Một đời ở lại. Ngày hội hiến máu trao niềm hy vọng cho các bệnh nhân cần máu điều trị.', hinhAnh: 'images/banner2.jpg', status: 'Còn hoạt động' },
         { id: 3, tenHoatDong: 'Trung thu cho em', moTaNgan: 'Mang đến không khí Tết Trung thu rộn ràng, lồng đèn lung linh và những phần quà ý nghĩa cho các em nhỏ.', hinhAnh: 'images/banner3.jpg', status: 'Còn hoạt động' },
         { id: 4, tenHoatDong: 'Kỷ niệm 5 năm thành lập', moTaNgan: 'Lễ kỷ niệm chặng đường 5 năm cống hiến vì cộng đồng của CLB Tình Nguyện Hoa Sen - Cơm An.', hinhAnh: 'images/banner4.jpg', status: 'Còn hoạt động' },
@@ -100,7 +100,88 @@ function loadLocalStore() {
 }
 
 function saveLocalStore() {
-    localStorage.setItem('CLB_HOA_SEN_APP_DATA', JSON.stringify(appData));
+    try {
+        localStorage.setItem('CLB_HOA_SEN_APP_DATA', JSON.stringify(appData));
+    } catch (e) {
+        console.error("LocalStorage save error:", e);
+    }
+    fetch('/api/admin/save-all', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(appData)
+    }).catch(err => console.log('Offline/Local Mode Active'));
+}
+
+function exportMembersJsonConfig() {
+    const jsonStr = JSON.stringify(appData, null, 2);
+    const blob = new Blob([jsonStr], { type: 'application/json' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = `CLB_Hoa_Sen_Full_Config_${new Date().toISOString().slice(0, 10)}.json`;
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    showToast('📤 Đã tải xuống file cấu hình dữ liệu và hình ảnh!', 'success');
+}
+
+function importMembersJsonConfig(e) {
+    const file = e.target.files[0];
+    if (!file) return;
+
+    const reader = new FileReader();
+    reader.onload = function(event) {
+        try {
+            const importedData = JSON.parse(event.target.result);
+            if (importedData) {
+                appData = importedData;
+                saveLocalStore();
+                if (typeof renderMembersTable === 'function') renderMembersTable();
+                if (typeof renderActivitiesTable === 'function') renderActivitiesTable();
+                showToast('🎉 Đã nhập và áp dụng toàn bộ cấu hình ảnh & dữ liệu thành công!', 'success');
+            }
+        } catch (err) {
+            showToast('⚠️ File JSON không hợp lệ! Vui lòng chọn đúng file cấu hình đã xuất.', 'warning');
+        }
+    };
+    reader.readAsText(file);
+    e.target.value = '';
+}
+
+function compressImageFile(file, maxWidth = 1200, maxHeight = 1200, quality = 0.75) {
+    return new Promise((resolve) => {
+        if (!file || !file.type.startsWith('image/')) {
+            resolve(null);
+            return;
+        }
+        const reader = new FileReader();
+        reader.onload = (e) => {
+            const img = new Image();
+            img.onload = () => {
+                let width = img.width;
+                let height = img.height;
+                if (width > maxWidth || height > maxHeight) {
+                    if (width / height > maxWidth / maxHeight) {
+                        height = Math.round((height * maxWidth) / width);
+                        width = maxWidth;
+                    } else {
+                        width = Math.round((width * maxHeight) / height);
+                        height = maxHeight;
+                    }
+                }
+                const canvas = document.createElement('canvas');
+                canvas.width = width;
+                canvas.height = height;
+                const ctx = canvas.getContext('2d');
+                ctx.drawImage(img, 0, 0, width, height);
+                resolve(canvas.toDataURL('image/jpeg', quality));
+            };
+            img.onerror = () => resolve(e.target.result);
+            img.src = e.target.result;
+        };
+        reader.onerror = () => resolve(null);
+        reader.readAsDataURL(file);
+    });
 }
 
 function checkAuthSession() {
@@ -177,60 +258,59 @@ function initAdminNavigation() {
     });
 }
 
-/* FILE UPLOADER LOGIC FROM ADMIN COMPUTER */
-function handleSingleFileUpload(event, targetInputId) {
+/* FILE UPLOADER LOGIC FROM ADMIN COMPUTER (WITH SMART CLIENT-SIDE COMPRESSION) */
+async function handleSingleFileUpload(event, targetInputId) {
     const file = event.target.files[0];
     if (!file) return;
 
     if (!file.type.startsWith('image/')) {
-        showToast('⚠️ Vui lòng chọn file hình ảnh (JPG, PNG, GIF)!', 'warning');
+        showToast('⚠️ Vui lòng chọn file hình ảnh (JPG, PNG, GIF, WEBP)!', 'warning');
         return;
     }
 
-    showToast('⏳ Đang xử lý file ảnh từ máy tính...', 'info');
+    showToast('⏳ Đang xử lý và nén ảnh từ máy tính...', 'info');
 
-    const reader = new FileReader();
-    reader.onload = function(e) {
-        const resultUrl = e.target.result;
+    const compressed = await compressImageFile(file, 800, 800, 0.8);
+    if (compressed) {
         const targetInput = document.getElementById(targetInputId);
         if (targetInput) {
-            targetInput.value = resultUrl;
+            targetInput.value = compressed;
             showToast('✨ Đã tải ảnh từ máy tính vào ô thông tin thành công!', 'success');
         }
-    };
-    reader.readAsDataURL(file);
+    }
     event.target.value = '';
 }
 
-function handleBannerFileUpload(event) {
-    const file = event.target.files[0];
-    if (!file) return;
+async function handleBannerFileUpload(event) {
+    const files = Array.from(event.target.files || []);
+    if (files.length === 0) return;
 
-    if (!file.type.startsWith('image/')) {
-        showToast('⚠️ Vui lòng chọn file hình ảnh (JPG, PNG, GIF)!', 'warning');
+    const validFiles = files.filter(f => f.type.startsWith('image/'));
+    if (validFiles.length === 0) {
+        showToast('⚠️ Vui lòng chọn các file hình ảnh hợp lệ (JPG, PNG, GIF, WEBP)!', 'warning');
         return;
     }
 
-    showToast('⏳ Đang tải ảnh từ máy tính vào Slide Banner...', 'info');
+    showToast(`⏳ Đang nén và lưu ${validFiles.length} ảnh từ máy tính vào Slide Banner...`, 'info');
 
-    const reader = new FileReader();
-    reader.onload = function(e) {
-        const resultUrl = e.target.result;
+    const compressedImages = [];
+    for (const file of validFiles) {
+        const compressed = await compressImageFile(file, 1400, 1400, 0.78);
+        if (compressed) compressedImages.push(compressed);
+    }
+
+    if (compressedImages.length > 0) {
         if (!appData.content.HERO_SLIDES) appData.content.HERO_SLIDES = [];
-        if (appData.content.HERO_SLIDES.length >= 20) {
-            showToast('⚠️ Banner đã đạt giới hạn tối đa 20 slide ảnh!', 'warning');
-            return;
-        }
-        appData.content.HERO_SLIDES.unshift(resultUrl);
+        appData.content.HERO_SLIDES.unshift(...compressedImages);
         saveLocalStore();
         renderBannerSlidesList();
-        showToast('🎉 Đã thêm ảnh mới từ máy tính vào đầu Slide Banner!', 'success');
-    };
-    reader.readAsDataURL(file);
+        showToast(`🎉 Đã tải lên và LƯU THÀNH CÔNG ${compressedImages.length} ảnh mới vào Banner!`, 'success');
+    }
+
     event.target.value = '';
 }
 
-function handleBannerSingleFileUpload(event, index) {
+async function handleBannerSingleFileUpload(event, index) {
     const file = event.target.files[0];
     if (!file) return;
 
@@ -239,18 +319,16 @@ function handleBannerSingleFileUpload(event, index) {
         return;
     }
 
-    showToast('⏳ Đang tải ảnh từ máy tính vào Slide Banner...', 'info');
+    showToast('⏳ Đang xử lý và nén ảnh Slide Banner...', 'info');
 
-    const reader = new FileReader();
-    reader.onload = function(e) {
-        const resultUrl = e.target.result;
+    const compressed = await compressImageFile(file, 1400, 1400, 0.78);
+    if (compressed) {
         if (!appData.content.HERO_SLIDES) appData.content.HERO_SLIDES = [];
-        appData.content.HERO_SLIDES[index] = resultUrl;
+        appData.content.HERO_SLIDES[index] = compressed;
         saveLocalStore();
         renderBannerSlidesList();
         showToast(`✨ Đã thay ảnh Slide Banner #${index + 1} thành công!`, 'success');
-    };
-    reader.readAsDataURL(file);
+    }
     event.target.value = '';
 }
 
@@ -417,7 +495,7 @@ function deleteAboutImage(index) {
     }
 }
 
-function handleAboutSingleFileUpload(event, index) {
+async function handleAboutSingleFileUpload(event, index) {
     const file = event.target.files[0];
     if (!file) return;
 
@@ -426,44 +504,45 @@ function handleAboutSingleFileUpload(event, index) {
         return;
     }
 
-    showToast('⏳ Đang tải ảnh từ máy tính vào Album Về Chúng Tôi...', 'info');
-    const reader = new FileReader();
-    reader.onload = function(e) {
-        const resultUrl = e.target.result;
+    showToast('⏳ Đang nén và thay ảnh trong Album Về Chúng Tôi...', 'info');
+
+    const compressed = await compressImageFile(file, 1200, 1200, 0.75);
+    if (compressed) {
         if (!appData.content.ABOUT_IMAGES) appData.content.ABOUT_IMAGES = [];
-        appData.content.ABOUT_IMAGES[index] = resultUrl;
+        appData.content.ABOUT_IMAGES[index] = compressed;
         saveLocalStore();
         renderAboutImagesList();
         showToast(`✨ Đã thay ảnh #${index + 1} trong Album Về Chúng Tôi thành công!`, 'success');
-    };
-    reader.readAsDataURL(file);
+    }
     event.target.value = '';
 }
 
-function handleAboutAlbumFileUpload(event) {
-    const file = event.target.files[0];
-    if (!file) return;
+async function handleAboutAlbumFileUpload(event) {
+    const files = Array.from(event.target.files || []);
+    if (files.length === 0) return;
 
-    if (!file.type.startsWith('image/')) {
-        showToast('⚠️ Vui lòng chọn file hình ảnh (JPG, PNG, GIF)!', 'warning');
+    const validFiles = files.filter(f => f.type.startsWith('image/'));
+    if (validFiles.length === 0) {
+        showToast('⚠️ Vui lòng chọn các file hình ảnh hợp lệ (JPG, PNG, GIF, WEBP)!', 'warning');
         return;
     }
 
-    showToast('⏳ Đang thêm ảnh mới từ máy tính vào Album Về Chúng Tôi...', 'info');
-    const reader = new FileReader();
-    reader.onload = function(e) {
-        const resultUrl = e.target.result;
+    showToast(`⏳ Đang nén và lưu ${validFiles.length} ảnh vào Album Về Chúng Tôi...`, 'info');
+
+    const compressedImages = [];
+    for (const file of validFiles) {
+        const compressed = await compressImageFile(file, 1200, 1200, 0.75);
+        if (compressed) compressedImages.push(compressed);
+    }
+
+    if (compressedImages.length > 0) {
         if (!appData.content.ABOUT_IMAGES) appData.content.ABOUT_IMAGES = [];
-        if (appData.content.ABOUT_IMAGES.length >= 30) {
-            showToast('⚠️ Album đã đạt giới hạn tối đa 30 hình ảnh!', 'warning');
-            return;
-        }
-        appData.content.ABOUT_IMAGES.unshift(resultUrl);
+        appData.content.ABOUT_IMAGES.unshift(...compressedImages);
         saveLocalStore();
         renderAboutImagesList();
-        showToast('🎉 Đã tải & thêm ảnh mới vào Album Về Chúng Tôi thành công!', 'success');
-    };
-    reader.readAsDataURL(file);
+        showToast(`🌿 Đã tải lên và LƯU THÀNH CÔNG ${compressedImages.length} ảnh mới vào Về Chúng Tôi!`, 'success');
+    }
+
     event.target.value = '';
 }
 
@@ -477,7 +556,7 @@ function saveAboutUsSettings(e) {
     showToast('🌿 Đã lưu cập nhật Về Chúng Tôi và bộ ảnh thành công!', 'success');
 }
 
-/* REGISTERED USER ACCOUNTS MANAGER FOR ADMIN */
+/* REGISTERED USER ACCOUNTS MANAGER FOR ADMIN (FULL CRUD & SEARCH) */
 function renderUserAccountsTable() {
     const tbody = document.getElementById('adminUserAccountsList');
     if (!tbody) return;
@@ -485,22 +564,124 @@ function renderUserAccountsTable() {
     const usersList = JSON.parse(localStorage.getItem('CLB_REGISTERED_USERS') || '[]');
 
     if (usersList.length === 0) {
-        tbody.innerHTML = `<tr><td colspan="6" style="text-align: center; color: var(--text-muted); padding: 24px;">Chưa có tài khoản người dùng nào đăng ký trên hệ thống.</td></tr>`;
+        tbody.innerHTML = `<tr><td colspan="6" style="text-align: center; color: var(--text-muted); padding: 24px;">Chưa có tài khoản người dùng nào đăng ký trên hệ thống. Bấm "➕ Thêm Tài Khoản Mới" để tạo tài khoản.</td></tr>`;
         return;
     }
 
     tbody.innerHTML = usersList.map((u, index) => `
-        <tr>
+        <tr class="user-account-row" data-search="${(u.fullName + ' ' + u.user).toLowerCase()}">
             <td>${index + 1}</td>
-            <td><strong>${u.fullName}</strong></td>
-            <td><code style="background: #f1f5f9; padding: 2px 8px; border-radius: 4px;">${u.user}</code></td>
-            <td><span style="letter-spacing: 2px;">••••••••</span> <small style="color: #64748b;">(${u.pass})</small></td>
-            <td>${u.createdAt ? new Date(u.createdAt).toLocaleDateString('vi-VN') : '2026-08-12'}</td>
+            <td><strong style="color: var(--primary-dark);">${u.fullName}</strong></td>
+            <td><code style="background: #eff6ff; color: #1d4ed8; font-weight: 700; padding: 3px 8px; border-radius: 6px; border: 1px solid #bfdbfe;">${u.user}</code></td>
             <td>
-                <button class="btn-action-delete" onclick="deleteUserAccount(${index})">🗑 Xóa Tài Khoản</button>
+                <span id="passSpan_${index}" style="letter-spacing: 2px; font-weight: 700; color: #475569;">••••••••</span>
+                <button type="button" onclick="togglePassVisibility(${index}, '${u.pass}')" style="background: none; border: none; cursor: pointer; font-size: 0.82rem; margin-left: 6px; color: var(--primary);" title="Hiện/Ẩn mật khẩu">👁️ Xem</button>
+            </td>
+            <td>${u.createdAt ? new Date(u.createdAt).toLocaleDateString('vi-VN') + ' ' + new Date(u.createdAt).toLocaleTimeString('vi-VN', {hour: '2-digit', minute: '2-digit'}) : '2026-08-12'}</td>
+            <td>
+                <div style="display: flex; gap: 6px;">
+                    <button class="btn-action-edit" onclick="openEditUserAccountModal(${index})">✏️ Sửa</button>
+                    <button class="btn-action-delete" onclick="deleteUserAccount(${index})">🗑 Xóa</button>
+                </div>
             </td>
         </tr>
     `).join('');
+}
+
+function togglePassVisibility(index, realPass) {
+    const span = document.getElementById(`passSpan_${index}`);
+    if (!span) return;
+    if (span.textContent.includes('••••')) {
+        span.textContent = realPass;
+    } else {
+        span.textContent = '••••••••';
+    }
+}
+
+function openAddUserAccountModal() {
+    document.getElementById('userAccountModalTitle').textContent = '📝 Thêm Tài Khoản Người Dùng Mới';
+    document.getElementById('userAccEditIndex').value = '-1';
+    document.getElementById('userAccFullNameInput').value = '';
+    document.getElementById('userAccUserInput').value = '';
+    document.getElementById('userAccPassInput').value = '';
+
+    const modal = document.getElementById('userAccountFormModal');
+    if (modal) modal.classList.add('active');
+}
+
+function openEditUserAccountModal(index) {
+    const usersList = JSON.parse(localStorage.getItem('CLB_REGISTERED_USERS') || '[]');
+    if (index >= 0 && index < usersList.length) {
+        const u = usersList[index];
+        document.getElementById('userAccountModalTitle').textContent = `✏️ Cập Nhật Tài Khoản #${index + 1}`;
+        document.getElementById('userAccEditIndex').value = index;
+        document.getElementById('userAccFullNameInput').value = u.fullName;
+        document.getElementById('userAccUserInput').value = u.user;
+        document.getElementById('userAccPassInput').value = u.pass;
+
+        const modal = document.getElementById('userAccountFormModal');
+        if (modal) modal.classList.add('active');
+    }
+}
+
+function saveUserAccountForm(e) {
+    if (e) e.preventDefault();
+    const editIndex = parseInt(document.getElementById('userAccEditIndex').value);
+    const fullName = document.getElementById('userAccFullNameInput').value.trim();
+    const user = document.getElementById('userAccUserInput').value.trim();
+    const pass = document.getElementById('userAccPassInput').value.trim();
+
+    if (!fullName || !user || !pass) {
+        showToast('⚠️ Vui lòng điền đầy đủ tất cả các thông tin!', 'warning');
+        return;
+    }
+
+    let usersList = JSON.parse(localStorage.getItem('CLB_REGISTERED_USERS') || '[]');
+
+    if (editIndex === -1) {
+        const existing = usersList.find(u => u.user.toLowerCase() === user.toLowerCase());
+        if (existing) {
+            showToast('⚠️ Tên đăng nhập / Số điện thoại này đã tồn tại trên hệ thống!', 'warning');
+            return;
+        }
+        usersList.unshift({
+            fullName,
+            user,
+            pass,
+            createdAt: new Date().toISOString()
+        });
+        showToast(`🎉 Đã tạo thành công tài khoản cho "${fullName}"!`, 'success');
+    } else {
+        const existing = usersList.find((u, idx) => idx !== editIndex && u.user.toLowerCase() === user.toLowerCase());
+        if (existing) {
+            showToast('⚠️ Tên đăng nhập / Số điện thoại này đã thuộc về người dùng khác!', 'warning');
+            return;
+        }
+        usersList[editIndex].fullName = fullName;
+        usersList[editIndex].user = user;
+        usersList[editIndex].pass = pass;
+        showToast(`✨ Đã cập nhật thành công tài khoản của "${fullName}"!`, 'success');
+    }
+
+    localStorage.setItem('CLB_REGISTERED_USERS', JSON.stringify(usersList));
+    closeModal('userAccountFormModal');
+    renderUserAccountsTable();
+}
+
+function filterUserAccountsTable() {
+    const input = document.getElementById('searchAccountInput');
+    if (!input) return;
+    const filter = input.value.toLowerCase().trim();
+    const rows = document.querySelectorAll('.user-account-row');
+
+    rows.forEach(row => {
+        const searchText = row.getAttribute('data-search') || '';
+        if (searchText.includes(filter)) {
+            row.style.display = '';
+        } else {
+            row.style.display = 'none';
+        }
+    });
 }
 
 function deleteUserAccount(index) {
@@ -693,7 +874,6 @@ function renderMembersTable() {
             <td><img src="${m.hinhAnh}" alt="${m.hoTen}" style="width: 50px; height: 50px; border-radius: 50%; object-fit: cover;"></td>
             <td><strong>${m.hoTen}</strong></td>
             <td>${m.chucVu}</td>
-            <td>${m.banNganh}</td>
             <td>
                 <button class="btn-action-edit" onclick="openEditMemberModal(${m.id})">🖊 Sửa</button>
                 <button class="btn-action-delete" onclick="deleteMember(${m.id})">🗑 Xóa</button>
@@ -707,7 +887,6 @@ function openAddMemberModal() {
     document.getElementById('memId').value = '';
     document.getElementById('memName').value = '';
     document.getElementById('memRole').value = '';
-    document.getElementById('memDepartment').value = 'Ban Chủ Nhiệm';
     document.getElementById('memQuote').value = '';
     document.getElementById('memImgUrl').value = 'images/pres.jpg';
     document.getElementById('memberFormModal').classList.add('active');
@@ -721,7 +900,6 @@ function openEditMemberModal(id) {
     document.getElementById('memId').value = m.id;
     document.getElementById('memName').value = m.hoTen;
     document.getElementById('memRole').value = m.chucVu;
-    document.getElementById('memDepartment').value = m.banNganh || 'Ban Chủ Nhiệm';
     document.getElementById('memQuote').value = m.cauNoi || '';
     document.getElementById('memImgUrl').value = m.hinhAnh;
     document.getElementById('memberFormModal').classList.add('active');
@@ -732,18 +910,17 @@ function saveMemberForm(e) {
     const id = document.getElementById('memId').value;
     const name = document.getElementById('memName').value.trim();
     const role = document.getElementById('memRole').value.trim();
-    const dept = document.getElementById('memDepartment').value;
     const quote = document.getElementById('memQuote').value.trim();
     const imgUrl = document.getElementById('memImgUrl').value.trim();
 
     if (id) {
         const idx = appData.members.findIndex(m => m.id == id);
         if (idx !== -1) {
-            appData.members[idx] = { ...appData.members[idx], hoTen: name, chucVu: role, banNganh: dept, cauNoi: quote, hinhAnh: imgUrl };
+            appData.members[idx] = { ...appData.members[idx], hoTen: name, chucVu: role, cauNoi: quote, hinhAnh: imgUrl };
             showToast('✅ Đã cập nhật thành viên!', 'success');
         }
     } else {
-        const newM = { id: Date.now(), hoTen: name, chucVu: role, banNganh: dept, cauNoi: quote, hinhAnh: imgUrl || 'images/pres.jpg' };
+        const newM = { id: Date.now(), hoTen: name, chucVu: role, cauNoi: quote, hinhAnh: imgUrl || 'images/pres.jpg' };
         appData.members.push(newM);
         showToast('🎉 Đã thêm thành viên mới!', 'success');
     }

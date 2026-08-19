@@ -573,6 +573,10 @@ async function loadActivities() {
                 list.push({ id: 5, tenHoatDong: 'Xuân ấm tình thương', moTaNgan: 'Trao tặng những phần quà Tết ý nghĩa, áo ấm và nhu yếu phẩm đến các hộ gia đình và trẻ em có hoàn cảnh khó khăn.', hinhAnh: 'images/xuanam.jpg', status: 'Còn hoạt động' });
                 needsSave = true;
             }
+            if (!list.some(a => a.tenHoatDong && a.tenHoatDong.includes('cà rốt'))) {
+                list.unshift({ id: 6, tenHoatDong: '🥕 Chung tay hỗ trợ tiêu thụ cà rốt Hải Phòng', moTaNgan: 'Chung tay cùng bà con nông dân kết nối, thu mua và hỗ trợ tiêu thụ nông sản cà rốt Hải Phòng.', hinhAnh: 'images/carrots_support.jpg', status: 'Còn hoạt động' });
+                needsSave = true;
+            }
             if (needsSave) {
                 fullData.activities = list;
                 localStorage.setItem('CLB_HOA_SEN_APP_DATA', JSON.stringify(fullData));
@@ -597,55 +601,84 @@ async function loadActivities() {
 }
 
 async function loadMembers() {
-    const slider = document.getElementById('membersSlider');
-    if (!slider) return;
     const saved = localStorage.getItem('CLB_HOA_SEN_APP_DATA');
-    if (saved) {
-        try {
-            let fullData = JSON.parse(saved);
-            let list = fullData.members || [];
-            
-            let needsSave = false;
-            list.forEach(m => {
-                if (m.id === 3 || m.hoTen === 'Đ/c Bùi Thuận An') {
-                    if (m.hoTen !== 'Đ/c Nguyễn Văn Thuận') {
-                        m.hoTen = 'Đ/c Nguyễn Văn Thuận';
-                        needsSave = true;
-                    }
+    if (!saved) return;
+    try {
+        let fullData = JSON.parse(saved);
+        let list = fullData.members || [];
+        
+        let needsSave = false;
+        if (list.some(m => m.hoTen && m.hoTen.includes('Trần Thị Nguyên'))) {
+            list = list.filter(m => !m.hoTen.includes('Trần Thị Nguyên'));
+            needsSave = true;
+        }
+        list.forEach(m => {
+            if (m.id === 3 || m.hoTen === 'Đ/c Bùi Thuận An') {
+                if (m.hoTen !== 'Đ/c Nguyễn Văn Thuận') {
+                    m.hoTen = 'Đ/c Nguyễn Văn Thuận';
+                    needsSave = true;
                 }
-                if (m.id === 4 || m.hoTen.includes('Trần Kim Khánh')) {
-                    if (m.chucVu !== 'Trưởng Ban Nhiệm Vụ') {
-                        m.chucVu = 'Trưởng Ban Nhiệm Vụ';
-                        needsSave = true;
-                    }
+            }
+            if (m.id === 4 || m.hoTen.includes('Trần Kim Khánh')) {
+                if (m.chucVu !== 'Trưởng Ban Nhiệm Vụ') {
+                    m.chucVu = 'Trưởng Ban Nhiệm Vụ';
+                    needsSave = true;
                 }
-                if (m.id === 8 || m.hoTen.includes('Chu Thị Phúc')) {
-                    if (m.chucVu !== 'Thủ Quỹ - Ban Thủ Quỹ - Bán Hàng') {
-                        m.chucVu = 'Thủ Quỹ - Ban Thủ Quỹ - Bán Hàng';
-                        needsSave = true;
-                    }
+            }
+            if (m.id === 8 || m.hoTen.includes('Chu Thị Phúc')) {
+                if (m.chucVu !== 'Thủ Quỹ - Ban Thủ Quỹ - Bán Hàng') {
+                    m.chucVu = 'Thủ Quỹ - Ban Thủ Quỹ - Bán Hàng';
+                    needsSave = true;
                 }
+            }
+        });
+
+        if (needsSave) {
+            fullData.members = list;
+            localStorage.setItem('CLB_HOA_SEN_APP_DATA', JSON.stringify(fullData));
+        }
+
+        // DYNAMICALLY UPDATE THE ORG CHART TREE (SƠ ĐỒ PHÂN CẤP CLB) AVATARS & DETAILS
+        const orgCards = document.querySelectorAll('.org-tree-container .org-card');
+        orgCards.forEach(card => {
+            const nameEl = card.querySelector('.org-name');
+            if (!nameEl) return;
+            const nameText = nameEl.textContent.trim();
+
+            const matchedMember = list.find(m => {
+                if (!m || !m.hoTen) return false;
+                const cleanM = m.hoTen.replace('Đ/c ', '').trim().toLowerCase();
+                const cleanCard = nameText.replace('Đ/c ', '').trim().toLowerCase();
+                return cleanM === cleanCard || cleanCard.includes(cleanM) || cleanM.includes(cleanCard);
             });
 
-            if (needsSave) {
-                fullData.members = list;
-                localStorage.setItem('CLB_HOA_SEN_APP_DATA', JSON.stringify(fullData));
+            if (matchedMember) {
+                const imgEl = card.querySelector('.org-avatar img');
+                if (imgEl && matchedMember.hinhAnh) {
+                    imgEl.src = matchedMember.hinhAnh;
+                }
+                const quoteEl = card.querySelector('.org-quote');
+                if (quoteEl && matchedMember.cauNoi) {
+                    quoteEl.textContent = `"${matchedMember.cauNoi}"`;
+                }
             }
+        });
 
-            if (list) {
-                slider.innerHTML = list.map(m => `
-                    <div class="member-card-slide">
-                        <div class="member-avatar">
-                            <img src="${m.hinhAnh}" alt="${m.hoTen}">
-                        </div>
-                        <h3 class="member-name">${m.hoTen}</h3>
-                        <div class="member-role">${m.chucVu}</div>
-                        <p class="member-quote">"${m.cauNoi}"</p>
+        // UPDATE SLIDER IF PRESENT
+        const slider = document.getElementById('membersSlider');
+        if (slider && list) {
+            slider.innerHTML = list.map(m => `
+                <div class="member-card-slide">
+                    <div class="member-avatar">
+                        <img src="${m.hinhAnh}" alt="${m.hoTen}">
                     </div>
-                `).join('');
-            }
-        } catch (e) {}
-    }
+                    <h3 class="member-name">${m.hoTen}</h3>
+                    <div class="member-role">${m.chucVu}</div>
+                    <p class="member-quote">"${m.cauNoi}"</p>
+                </div>
+            `).join('');
+        }
+    } catch (e) {}
 }
 
 function initModals() {
